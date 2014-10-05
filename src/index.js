@@ -5,10 +5,10 @@ require('./styles');
 require('famous-polyfills');
 
 // import dependencies
-var Engine = require('famous/core/Engine');
-var Modifier = require('famous/core/Modifier');
-var Transform = require('famous/core/Transform');
-var ImageSurface = require('famous/surfaces/ImageSurface');
+var Engine = require('famous/src/core/Engine');
+var Modifier = require('famous/src/core/Modifier');
+var Transform = require('famous/src/core/Transform');
+var ImageSurface = require('famous/src/surfaces/ImageSurface');
 
 // create the main context
 var mainContext = Engine.createContext();

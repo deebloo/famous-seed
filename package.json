@@ -4,38 +4,23 @@
   "description": "seed for a browserified version of famous",
   "browser": "src/index.js",
   "main": "plugin.js",
-  "browserify": {
-    "transform": [
-      "famousify",
-      "cssify",
-      "brfs"
-    ]
-  },
   "scripts": {
-    "start": "npm run build && node server.js",
-    "start-dev": "npm run watch & node server.js",
-    "test": "npm run lint -s && npm run build",
-    "build": "browserify src/index.js | uglifyjs > public/bundle.js",
-    "watch": "watchify src/index.js -o public/bundle.js --debug --verbose",
-    "lint-eslint": "eslint src/",
-    "lint-jscs": "jscs src/",
-    "lint": "npm run lint-eslint && npm run lint-jscs"
+    "start": "npm run build && node server.js"
   },
   "devDependencies": {
-    "eslint": "^0.8.2",
-    "jscs": "^1.5.8"
+    "cssify": "^0.6.0",
+    "gulp": "^3.8.8",
+    "gulp-browserify": "^0.5.0",
+    "gulp-connect": "^2.0.6",
+    "gulp-jshint": "^1.8.5",
+    "gulp-rename": "^1.2.0",
+    "gulp-uglify": "^1.0.1",
+    "jshint-stylish": "^1.0.0"
   },
-  "author": "TheAlphaNerd",
+  "author": "DannyBlueDesign",
   "license": "ISC",
   "dependencies": {
-    "brfs": "^1.1.1",
-    "browserify": "^6.0.2",
-    "cssify": "^0.6.0",
     "famous": "^0.3.0-rc",
-    "famous-polyfills": "^0.3.0",
-    "famousify": "^0.1.4",
-    "hapi": "^6.5.1",
-    "uglify-js": "^2.4.15",
-    "watchify": "^1.0.1"
+    "famous-polyfills": "^0.3.0"
   }
 }

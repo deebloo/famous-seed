@@ -1,3 +1,3 @@
 // load css
-require('famous/core/famous.css');
+require('famous/src/core/famous.css');
 require('./app.css');
