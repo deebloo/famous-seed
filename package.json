@@ -1,12 +1,9 @@
 {
   "name": "browserify-seed",
   "version": "0.3.0-rc",
-  "description": "seed for a browserified version of famous",
+  "description": "seed for a browserified version of famous using gulp",
   "browser": "src/index.js",
   "main": "plugin.js",
-  "scripts": {
-    "start": "npm run build && node server.js"
-  },
   "devDependencies": {
     "cssify": "^0.6.0",
     "gulp": "^3.8.8",

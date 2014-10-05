@@ -54,4 +54,6 @@ gulp.task('watch', function() {
  */
 gulp.task('default', ['connect', 'watch', 'browserify', 'lint']);
 
+gulp.task('serve', ['connect', 'watch', 'browserify', 'lint']);
+
 gulp.task('build', ['browserify', 'lint']);
