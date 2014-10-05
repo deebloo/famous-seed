@@ -45,14 +45,12 @@ gulp.task('browserify', function() {
  * Watch javascript files for changes and run browserify
  */
 gulp.task('watch', function() {
-  gulp.watch(['src/**/*.js'], ['browserify', 'lint']);
+  gulp.watch(['src/**/*.js', 'src/styles/*.css'], ['browserify', 'lint']);
 });
 
 /**
  * Setup default task
  */
-gulp.task('default', ['connect', 'watch', 'browserify', 'lint']);
+gulp.task('default', ['browserify', 'lint']);
 
 gulp.task('serve', ['connect', 'watch', 'browserify', 'lint']);
-
-gulp.task('build', ['browserify', 'lint']);

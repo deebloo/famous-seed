@@ -1,0 +1,19 @@
+{
+  "name": "browserify-seed",
+  "version": "0.3.0-rc",
+  "homepage": "https://github.com/DannyBlueDesign/browserify-seed",
+  "authors": [
+    "Danny Blue <dblue@deloitte.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation": "~5.4.5"
+  }
+}
