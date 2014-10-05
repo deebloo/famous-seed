@@ -1,6 +1,5 @@
 var gulp = require('gulp'),
     browserify = require('gulp-browserify'),
-    cssify = require('cssify'),
     uglify = require('gulp-uglify'),
     connect = require('gulp-connect'),
     rename = require('gulp-rename'),
@@ -32,7 +31,7 @@ gulp.task('lint', function() {
 gulp.task('browserify', function() {
   return gulp.src('./src/index.js')
     .pipe(browserify({
-      transform: ['cssify'],
+      transform: ['cssify', 'famousify'],
       insertGlobals : true,
       debug : true
     }))
@@ -46,7 +45,7 @@ gulp.task('browserify', function() {
  * Watch javascript files for changes and run browserify
  */
 gulp.task('watch', function() {
-  gulp.watch(['game/js/**/*.js'], ['browserify', 'lint']);
+  gulp.watch(['src/**/*.js'], ['browserify', 'lint']);
 });
 
 /**
