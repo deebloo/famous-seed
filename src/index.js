@@ -4,30 +4,12 @@ require('./styles');
 // Load polyfills
 require('famous-polyfills');
 
-// import dependencies
-var Engine = require('famous/core/Engine'),
-    Modifier = require('famous/core/Modifier'),
-    Transform = require('famous/core/Transform'),
-    ImageSurface = require('famous/surfaces/ImageSurface');
+var Engine = require('famous/core/Engine');
 
-// create the main context
+var AppView = require('./views/AppView');
+
 var mainContext = Engine.createContext();
 
-// your app here
-var logo = new ImageSurface({
-  size: [200, 200],
-  content: 'images/famous_logo.png',
-  classes: ['backfaceVisibility']
-});
+var appView = new AppView();
 
-var initialTime = Date.now();
-
-var centerSpinModifier = new Modifier({
-  align: [0.5, 0.5],
-  origin: [0.5, 0.5],
-  transform : function() {
-    return Transform.rotateY(.002 * (Date.now() - initialTime));
-  }
-});
-
-mainContext.add(centerSpinModifier).add(logo);
+mainContext.add(appView);
