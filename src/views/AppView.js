@@ -2,8 +2,9 @@
 
 // Import Famous Module
 var View          = require('famous/core/View'),
-    StateModifier = require('famous/modifiers/StateModifier'),
-    FastClick     = require('famous/inputs/FastClick');
+    StateModifier = require('famous/modifiers/StateModifier');
+
+require('famous/inputs/FastClick');
 
 var PageView = require('./PageView');
 
@@ -25,8 +26,6 @@ function _createPageView() {
  */
 function AppView() {
   View.apply(this, arguments);
-
-  this.menuToggle = false;
 
   _createPageView.call(this);
 }
