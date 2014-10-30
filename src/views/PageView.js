@@ -1,7 +1,5 @@
-/**
- * @name Page View
- * @type {exports}
- */
+"use strict";
+
 var View          = require('famous/core/View'),
     Surface       = require('famous/core/Surface'),
     Transform     = require('famous/core/Transform'),
@@ -9,6 +7,11 @@ var View          = require('famous/core/View'),
     HeaderFooter  = require('famous/views/HeaderFooterLayout'),
     ImageSurface  = require('famous/surfaces/ImageSurface');
 
+/**
+ * @name Page View
+ * @description Page view constructor
+ * @constructor
+ */
 function PageView() {
   View.apply(this, arguments);
 

@@ -1,3 +1,5 @@
+"user strict";
+
 // load css
 require('./styles');
 

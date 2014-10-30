@@ -1,3 +1,5 @@
+"use strict";
+
 // Import Famous Module
 var View          = require('famous/core/View'),
     StateModifier = require('famous/modifiers/StateModifier'),
