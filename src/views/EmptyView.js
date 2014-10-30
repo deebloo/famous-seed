@@ -1,13 +1,10 @@
-"use strict";
+'use strict';
 
 /**
  * Empty View
  * @type {exports}
  */
-var View = require('famous/core/View'),
-    Transform = require('famous/core/Transform'),
-    Modifier = require('famous/core/Modifier'),
-    ImageSurface = require('famous/surfaces/ImageSurface');
+var View = require('famous/core/View');
 
 function EmptyView() {
   View.apply(this, arguments);
