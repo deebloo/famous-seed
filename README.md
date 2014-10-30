@@ -12,7 +12,7 @@ git clone https://github.com/DannyBlueDesign/famous-seed
 
 \# rm -rf .git && git init && git commit -m "Make it so" # optionally reset git history
 
-npm install # install dependencies
+npm install & bower install # install dependencies
 ```
 
 ---
