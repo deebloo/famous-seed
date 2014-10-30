@@ -1,5 +1,5 @@
 #Famous Seed
-> A seed project for Famous using browserify and gulpgi
+> A seed project for Famous using browserify and gulp
 
 ---
 
