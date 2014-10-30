@@ -54,6 +54,12 @@ function _createHeader() {
     }
   });
 
+  var hamburgerSurface = new ImageSurface({
+    size: [44, 44],
+    content : 'images/hamburger.png'
+  });
+
+  this.layout.header.add(hamburgerSurface);
   this.layout.header.add(backgroundSurface);
 }
 
