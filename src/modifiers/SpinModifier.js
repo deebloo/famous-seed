@@ -3,12 +3,10 @@ var Modifier  = require('famous/core/Modifier'),
 
 var initialTime = Date.now();
 
-var centerSpinModifier = new Modifier({
-  align: [0.5, 0.5],
-  origin: [0.5, 0.5],
+var SpinModifier = new Modifier({
   transform : function() {
     return Transform.rotateY(.002 * (Date.now() - initialTime));
   }
 });
 
-module.exports = centerSpinModifier;
+module.exports = SpinModifier;

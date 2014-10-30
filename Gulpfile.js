@@ -25,7 +25,7 @@ gulp.task('browserify', function() {
       insertGlobals : true,
       debug : true
     }))
-    .pipe(uglify())
+    //.pipe(uglify())
     .pipe(rename('bundle.js'))
     .pipe(gulp.dest('./public'))
     .pipe(connect.reload());

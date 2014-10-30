@@ -1,11 +1,10 @@
 // Import Famous Module
-var View               = require('famous/core/View'),
-    Surface            = require('famous/core/Surface'),
-    HeaderFooterLayout = require('famous/views/HeaderFooterLayout'),
-    ImageSurface       = require('famous/surfaces/ImageSurface');
+var View          = require('famous/core/View'),
+    StateModifier = require('famous/modifiers/StateModifier'),
+    Transform     = require('famous/core/Transform'),
+    FastClick     = require('famous/inputs/FastClick');
 
-// Import Custom Modifiers
-var centerSpinModifier = require('../modifiers/centerSpinModifier');
+var PageView = require('./PageView');
 
 /**
  * @name App View
@@ -13,46 +12,61 @@ var centerSpinModifier = require('../modifiers/centerSpinModifier');
  * @constructor
  */
 function AppView() {
-  View.apply(this, arguments); // Call view and apply passed in arguments
+  View.apply(this, arguments);
 
-  var layout = new HeaderFooterLayout(); // Create header/footer layout
+  this.menuToggle = false;
 
-  var logo = new ImageSurface({
-    size: [200, 200],
-    content: 'images/famous_logo.png',
-    classes: ['backfaceVisibility']
-  });
-
-  layout.header.add(new Surface({
-    size: [undefined, 100],
-    content: 'Header',
-    classes: ['red-bg'],
-    properties: {
-      lineHeight: '100px',
-      textAlign: 'center'
-    }
-  }));
-
-  // Add login and spin modifier to layout content
-  layout.content.add(centerSpinModifier).add(logo);
-
-  layout.footer.add(new Surface({
-    size: [undefined, 50],
-    content: 'Footer',
-    classes: ['red-bg'],
-    properties: {
-      lineHeight: '50px',
-      textAlign: 'center'
-    }
-  }));
-
-  // Add layout to the AppView
-  this.add(layout);
+  _createPageView.call(this);
+  _setListeners.call(this);
 }
 
+// Set up prototype chain
 AppView.prototype = Object.create(View.prototype);
 AppView.prototype.constructor = AppView;
 
-AppView.DEFAULT_OPTIONS = {};
+// Default Options object
+AppView.DEFAULT_OPTIONS = {
+  openPosition: 276,
+  transition: {
+    duration: 300,
+    curve: 'easeOut'
+  }
+};
+
+/**
+ * @name Toggle Menu
+ * @description toggle the hamburger menu right and left
+ */
+AppView.prototype.toggleMenu = function() {
+  if(this.menuToggle) {
+    this.slideLeft();
+  } else {
+    this.slideRight();
+  }
+  this.menuToggle = !this.menuToggle;
+};
+
+AppView.prototype.slideRight = function() {
+  this.pageModifier.setTransform(Transform.translate(276, 0, 0), this.options.transition);
+};
+
+AppView.prototype.slideLeft = function() {
+  this.pageModifier.setTransform(Transform.translate(0, 0, 0), this.options.transition);
+};
+
+/**
+ * @name Create Page View
+ * @private
+ */
+function _createPageView() {
+  this.pageView = new PageView();
+  this.pageModifier = new StateModifier();
+
+  this.add(this.pageModifier).add(this.pageView);
+}
+
+function _setListeners() {
+  this.pageView.on('menuToggle', this.toggleMenu.bind(this));
+}
 
 module.exports = AppView;
