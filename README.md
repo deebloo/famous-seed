@@ -1,14 +1,14 @@
-#Famous-Browserify-Gulp-Seed
-> A seed project to get started with Browserify and Famo.us using gulp
+#Famous Seed
+> A seed project for Famous using browserify and gulpgi
 
 ---
 
 ###Installation
 
 ```bash
-npm install -g browserify # first install browserify and watchify
+npm install -g browserify && watchify # first install browserify and watchify
 
-git clone https://github.com/DannyBlueDesign/browserify-seed
+git clone https://github.com/DannyBlueDesign/famous-seed
 
 \# rm -rf .git && git init && git commit -m "Make it so" # optionally reset git history
 
