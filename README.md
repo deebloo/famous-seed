@@ -6,13 +6,16 @@
 ###Installation
 
 ```bash
-npm install -g browserify && watchify # first install browserify and watchify
+npm install -g browserify # first install browserify
 
 git clone https://github.com/DannyBlueDesign/famous-seed
 
-rm -rf .git && git init && git commit -m "Make it so" # optionally reset git history
-
 npm install & bower install # install dependencies
+```
+
+Optional
+```bash
+rm -rf .git && git init && git commit -m "Make it so" # optionally reset git history
 ```
 
 ---
