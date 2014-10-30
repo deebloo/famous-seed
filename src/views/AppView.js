@@ -19,7 +19,6 @@ function AppView() {
   this.menuToggle = false;
 
   _createPageView.call(this);
-  _setListeners.call(this);
 }
 
 // Set up prototype chain
@@ -27,34 +26,7 @@ AppView.prototype = Object.create(View.prototype);
 AppView.prototype.constructor = AppView;
 
 // Default Options object
-AppView.DEFAULT_OPTIONS = {
-  openPosition: 276,
-  transition: {
-    duration: 300,
-    curve: 'easeOut'
-  }
-};
-
-/**
- * @name Toggle Menu
- * @description toggle the hamburger menu right and left
- */
-AppView.prototype.toggleMenu = function() {
-  if(this.menuToggle) {
-    this.slideLeft();
-  } else {
-    this.slideRight();
-  }
-  this.menuToggle = !this.menuToggle;
-};
-
-AppView.prototype.slideRight = function() {
-  this.pageModifier.setTransform(Transform.translate(276, 0, 0), this.options.transition);
-};
-
-AppView.prototype.slideLeft = function() {
-  this.pageModifier.setTransform(Transform.translate(0, 0, 0), this.options.transition);
-};
+AppView.DEFAULT_OPTIONS = {};
 
 /**
  * @name Create Page View
@@ -65,10 +37,6 @@ function _createPageView() {
   this.pageModifier = new StateModifier();
 
   this.add(this.pageModifier).add(this.pageView);
-}
-
-function _setListeners() {
-  this.pageView.on('menuToggle', this.toggleMenu.bind(this));
 }
 
 module.exports = AppView;
