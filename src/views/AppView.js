@@ -1,11 +1,17 @@
-var View = require('famous/core/View'),
-    Surface = require('famous/core/Surface'),
+// Import Famous Module
+var View               = require('famous/core/View'),
+    Surface            = require('famous/core/Surface'),
     HeaderFooterLayout = require('famous/views/HeaderFooterLayout'),
-    Transform = require('famous/core/Transform'),
-    Modifier = require('famous/core/Modifier'),
-    ImageSurface = require('famous/surfaces/ImageSurface'),
-    InputSurface = require('famous/surfaces/InputSurface');
+    ImageSurface       = require('famous/surfaces/ImageSurface');
 
+// Import Custom Modifiers
+var centerSpinModifier = require('../modifiers/centerSpinModifier');
+
+/**
+ * @name App View
+ * @description Create the main app view for the website
+ * @constructor
+ */
 function AppView() {
   View.apply(this, arguments);
 
@@ -16,16 +22,6 @@ function AppView() {
     size: [200, 200],
     content: 'images/famous_logo.png',
     classes: ['backfaceVisibility']
-  });
-
-  var initialTime = Date.now();
-
-  var centerSpinModifier = new Modifier({
-    align: [0.5, 0.5],
-    origin: [0.5, 0.5],
-    transform : function() {
-      return Transform.rotateY(.002 * (Date.now() - initialTime));
-    }
   });
 
   layout.header.add(new Surface({

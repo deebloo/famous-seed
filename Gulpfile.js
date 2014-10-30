@@ -1,9 +1,9 @@
-var gulp = require('gulp'),
+var gulp       = require('gulp'),
     browserify = require('gulp-browserify'),
-    uglify = require('gulp-uglify'),
-    connect = require('gulp-connect'),
-    rename = require('gulp-rename'),
-    jshint = require('gulp-jshint');
+    uglify     = require('gulp-uglify'),
+    connect    = require('gulp-connect'),
+    rename     = require('gulp-rename'),
+    jshint     = require('gulp-jshint');
 
 
 /**
