@@ -5,10 +5,6 @@ var gulp       = require('gulp'),
     rename     = require('gulp-rename'),
     jshint     = require('gulp-jshint');
 
-
-/**
- * Create test server
- */
 gulp.task('connect', function() {
   return connect.server({
     root: 'public',
@@ -16,18 +12,12 @@ gulp.task('connect', function() {
   });
 });
 
-/**
- * Lint all of the javascript
- */
 gulp.task('lint', function() {
   return gulp.src('game/js/**/*.js')
     .pipe(jshint())
     .pipe(jshint.reporter('jshint-stylish'));
 });
 
-/**
- * Browserify all the javascript!
- */
 gulp.task('browserify', function() {
   return gulp.src('./src/index.js')
     .pipe(browserify({
@@ -41,16 +31,10 @@ gulp.task('browserify', function() {
     .pipe(connect.reload());
 });
 
-/**
- * Watch javascript files for changes and run browserify
- */
 gulp.task('watch', function() {
   gulp.watch(['src/**/*.js', 'src/styles/*.css'], ['browserify', 'lint']);
 });
 
-/**
- * Setup default task
- */
 gulp.task('default', ['browserify', 'lint']);
 
 gulp.task('serve', ['connect', 'watch', 'browserify', 'lint']);

@@ -13,10 +13,9 @@ var centerSpinModifier = require('../modifiers/centerSpinModifier');
  * @constructor
  */
 function AppView() {
-  View.apply(this, arguments);
+  View.apply(this, arguments); // Call view and apply passed in arguments
 
-  // Create Layout
-  var layout = new HeaderFooterLayout();
+  var layout = new HeaderFooterLayout(); // Create header/footer layout
 
   var logo = new ImageSurface({
     size: [200, 200],

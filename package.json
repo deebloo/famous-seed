@@ -3,7 +3,7 @@
   "version": "0.3.0-rc",
   "description": "seed for a browserified version of famous using gulp",
   "browser": "src/index.js",
-  "main": "plugin.js",
+  "main": "index.js",
   "devDependencies": {
     "cssify": "^0.6.0",
     "famousify": "^0.1.5",

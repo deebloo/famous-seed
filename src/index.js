@@ -4,7 +4,7 @@ require('./styles');
 // Load polyfills
 require('famous-polyfills');
 
-var Engine = require('famous/core/Engine'),
+var Engine  = require('famous/core/Engine'),
     AppView = require('./views/AppView');
 
 var mainContext = Engine.createContext();
