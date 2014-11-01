@@ -19,19 +19,5 @@
   "smarttabs": true,
   "validthis": true,
   "globals": {
-    "jQuery": true,
-    "console": true,
-    "$": true,
-    "_": true,
-    "moment": true,
-    "describe": true,
-    "beforeEach": true,
-    "module": true,
-    "inject": true,
-    "it": true,
-    "expect": true,
-    "browser": true,
-    "element": true,
-    "by": true
   }
 }
