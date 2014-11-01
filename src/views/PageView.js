@@ -7,7 +7,7 @@ var View          = require('famous/core/View'),
 
 //Import Modifiers
 var CenterModifier = require('../modifiers/CenterModifier'),
-    SpinModifier = require('../modifiers/SpinModifier');
+    SpinModifier   = require('../modifiers/SpinModifier');
 
 /**
  * @name Create Layout
