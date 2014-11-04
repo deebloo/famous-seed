@@ -20,8 +20,10 @@ rm -rf .git && git init && git commit -m "Make it so" # optionally reset git his
 
 ---
 
-Run the dev server with ```gulp serve```
+Build and Run the dev server with ```gulp serve```
 
 Run the linters with ```gulp lint```
+
+Build app ```gulp```
 
 ---
