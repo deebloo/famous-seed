@@ -1,23 +1,11 @@
 'use strict';
 
 // Import Famous Module
-var View          = require('famous/core/View'),
-    StateModifier = require('famous/modifiers/StateModifier');
+var View = require('famous/core/View');
 
 require('famous/inputs/FastClick');
 
-var PageView = require('./PageView');
-
-/**
- * @name Create Page View
- * @private
- */
-function _createPageView() {
-  this.pageView = new PageView();
-  this.pageModifier = new StateModifier();
-
-  this.add(this.pageModifier).add(this.pageView);
-}
+var PageView = require('./PageView'); // Import PageView
 
 /**
  * @name App View
@@ -36,5 +24,15 @@ AppView.prototype.constructor = AppView;
 
 // Default Options object
 AppView.DEFAULT_OPTIONS = {};
+
+/**
+ * @name Create Page View
+ * @private
+ */
+function _createPageView() {
+  this.pageView = new PageView();
+
+  this.add(this.pageView);
+}
 
 module.exports = AppView;
