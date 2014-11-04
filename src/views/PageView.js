@@ -1,9 +1,10 @@
 'use strict';
 // Import Famous Modules
-var View         = require('famous/core/View'),
-    Surface      = require('famous/core/Surface'),
-    HeaderFooter = require('famous/views/HeaderFooterLayout'),
-    ImageSurface = require('famous/surfaces/ImageSurface');
+var View          = require('famous/core/View'),
+    Surface       = require('famous/core/Surface'),
+    HeaderFooter  = require('famous/views/HeaderFooterLayout'),
+    ImageSurface  = require('famous/surfaces/ImageSurface'),
+    StateModifier = require('famous/modifiers/StateModifier');
 
 // Import Modifiers
 var CenterModifier = require('../modifiers/CenterModifier'),
@@ -57,6 +58,17 @@ function _createHeader() {
     content : 'images/hamburger.png'
   });
 
+  var iconSurface = new ImageSurface({
+    size: [44, 44],
+    content: 'images/hamburger.png'
+  });
+
+  var iconModifier = new StateModifier({
+    origin: [1, 0.5],
+    align : [1, 0.5]
+  });
+
+  this.layout.header.add(iconModifier).add(iconSurface);
   this.layout.header.add(hamburgerSurface);
   this.layout.header.add(backgroundSurface);
 }
